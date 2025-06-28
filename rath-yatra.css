@@ -1,0 +1,234 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to top, #000, #1a1a1a);
+    color: #fff;
+    display: grid;
+    align-items: start;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #ffd700;
+    font-variant-caps: unicase;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-variant: normal;
+    color: #a19969;
+  }
+
+  .chariot-container {
+    display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        width: 100%;
+        padding: 2%;
+    border-bottom: 5px solid grey;
+  }
+
+  .chariot {
+    position: relative;
+    width: 180px;
+    height: 200px;
+    border: 4px solid #fff;
+    flex-shrink: 0;
+  }
+
+  .chariot-shadow-green {
+    box-shadow: 0 0 15px #228B22;
+  }
+
+  .chariot-shadow-yellow {
+    box-shadow: 0 0 15px #ffce00;
+  }
+
+  .chariot-shadow-red {
+    box-shadow: 0 0 15px #d72638;
+  }
+
+  .chariot::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 100px solid currentColor;
+  }
+
+  .chariot .flag {
+    position: absolute;
+    top: -125px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background: #c9672d;
+    animation: wave 1.5s infinite ease-in-out alternate;
+    transform-origin: left center;
+    box-shadow: 0 0 15px #c9672d;
+  }
+
+  .wheel {
+    position: absolute;
+    bottom: -30px;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+  }
+
+  .wheel.left { left: -10px; }
+  .wheel.right { right: -10px; }
+
+  .wheel-green {
+    border: 7px dashed #228b22;
+  }
+
+  .wheel-yellow {
+    border: 7px dashed #ffce00;
+  }
+
+  .wheel-red {
+    border: 7px dashed #d72638;
+  }
+
+  .deity {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+  }
+
+  .deity-white {    
+    border: 4px solid #fff;
+    top: 62px;
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    left: 49.5%;
+    box-shadow: 0 0 15px #fff;
+  }
+
+  .deity-green {    
+    background-image: url('../JuneFrontendChallenge/images/balbhadra.webp');
+  }
+
+  .deity-yellow {
+    background-image: url('../JuneFrontendChallenge/images/subhadra.webp');
+  }
+
+  .deity-red {
+    background-image: url('../JuneFrontendChallenge/images/jagannath.webp');
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .balabhadra {
+    background: #228B22;
+    color: #228B22;
+  }
+
+  .subhadra {
+    background: #FFD700;
+    color: #FFD700;
+  }
+
+  .jagannath {
+    background: #D72638;
+    color: #D72638;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes wave {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(10deg); }
+  }
+
+  @media (max-width: 768px) {
+    .chariot-container {
+      gap: 1.5rem;
+    }
+
+    .chariot {
+        width: 70px;
+        height: 110px;
+    }
+
+    .chariot::before {
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid currentColor;
+        top: -50px;
+    }
+
+    .chariot .flag {
+        top: -65px;
+        left: 70%;
+        width: 30px;
+        height: 15px;
+    }
+
+    .wheel {
+      width: 20px;
+      height: 20px;
+      bottom: -15px;
+    }
+
+    .wheel-red {
+        border: 3px dashed #d72638;
+    }
+
+    .wheel-yellow {
+        border: 3px dashed #ffce00;
+    }
+
+    .wheel-green {
+        border: 3px dashed #228b22;
+    }
+
+    .caption {
+      font-size: 0.5rem;
+    }
+
+    .deity {
+        top: 20px;
+        height: 60px;
+    }
+
+    .deity-white {
+        top: 26px;
+        width: 40px;
+        height: 40px;
+    }
+  }
